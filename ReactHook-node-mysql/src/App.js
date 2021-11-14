@@ -27,7 +27,6 @@ function App() {
   
 return (
 <div className="app">
-{/* <div id="container" style={{height: 400, width: 600}}></div> */}
 <div className="site-card-wrapper">
     <Row gutter={16}>
       <Col span={8}>

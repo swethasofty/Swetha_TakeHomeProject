@@ -38,8 +38,6 @@ function getData(arr)
           name:"Row count - orders"
         }]
       }
-
-      console.log(arr)
 }
     return (
         <div>
