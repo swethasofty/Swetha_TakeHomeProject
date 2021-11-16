@@ -21,20 +21,50 @@ function getData(arr)
     {
         resultMonth.push(arr[i].count)
     }
+    console.log(arr)
     pieChart = {
         title: {
           text: null},
         chart: {
           type: "column"},
         xAxis: {
-         categories:  ['January','February','March','April','May','June','July','August','September','October','November','December','TOTAL'],
+         categories:  ['Jan 2003','Feb 2003','Mar 2003','Apr 2003','May 2003','Jun 2003','Jul 2003','Aug 2003','Sep 2003','Oct 2003','Nov 2003','Dec 2003'],
           title: {
             text: null
           }
         },
-        series: [{
-          data:resultMonth,
-          name:"orderdate(month)"
+        dataLabels: {
+          enabled: true
+      },
+      plotOptions: { column: { 
+        dataLabels: { enabled: true }
+      },
+      animation: {
+        duration: 2000
+    },
+        series: {
+            point: {
+                events: {
+                    click: function () {
+                            alert("Category:"+this.category+", value: "+this.y)
+                    }
+                }
+            }
+        }
+    },
+    series: [{
+      data:resultMonth,
+      name:"Order Date(month)",
+      dataLabels: {
+        enabled: true,
+        color: '#000000',
+        backgroundColor: '#FFFFFF',
+        borderWidth: '1',
+        align: 'center',
+        x: 0,
+        y: 0,
+        rotation: 0,
+            }
         }]
       }
 }

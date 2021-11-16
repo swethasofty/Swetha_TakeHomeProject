@@ -18,24 +18,32 @@ export default function CustomersByOrders() {
 
 function getData(arr)
 {
+  var name=[];
     for(let i=0;i<arr.length;i++)
     {
         resultcustomer.push(arr[i].number)
+        name.push(arr[i].name)
     }
     pieChart = {
         title: {
           text: null},
         chart: {
           type: "bar"},
-        xAxis: {
-          categories:  ['Diego','Susan','Jytte ','Peter','Eric'],
-          title: {
-            text: null
-          }
+          xAxis: {
+            categories:name
         },
         series: [{
           data:resultcustomer,
-          name:"Row count - orders"
+          name:"Row Count - orders",
+          dataLabels: {
+            enabled: true,
+            color: '#000000',
+            borderWidth: '1',
+            align: 'center',
+            x: 0,
+            y: 0,
+            rotation: 0,
+      }
         }]
       }
 }

@@ -22,19 +22,45 @@ function getData(arr)
     {
       result.push(arr[i].y)
     }
+    console.log("nnn",arr)
     pieChart = {
         title: {
           text: null},
         chart: {
-          type: "pie"},
+          type: "line"},
         xAxis: {
             categories: ['Disputed', 'Resolved', 'On Hold', 'Cancelled', 'In Process','Shipped'],
           title: {
             text: null
           }
         },
+      plotOptions: { 
+        column: { 
+                dataLabels: { enabled: true }
+                },
+        series: {
+            point: {
+                events: {
+                    click: function () {
+                            alert("Category: "+this.category+", value: " +this.y)
+                    }
+                }
+            }
+        }
+    },
         series: [{
-          data:arr
+          data:arr,
+          name:"Shipping Status",
+//           dataLabels: {
+//             enabled: true,
+//             color: '#000000',
+//             backgroundColor: '#FFFFFF',
+//             borderWidth: '1',
+//             align: 'center',
+//             x: 0,
+//             y: 0,
+//             rotation: 0,
+// }
         }]
       }
 }

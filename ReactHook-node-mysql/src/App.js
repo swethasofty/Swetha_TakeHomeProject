@@ -27,20 +27,21 @@ function App() {
   
 return (
 <div className="app">
-<div className="site-card-wrapper">
+{/* <div className="site-card-wrapper"> */}
+<div>
     <Row gutter={16}>
       <Col span={8}>
-        <Card title="Orders By Shipping Status" bordered={false}>
+        <Card title="Orders By Shipping Status" bordered={true}>
           <Shipping />
         </Card>
       </Col>
       <Col span={8}>
-        <Card title="Count of Orders By Month" bordered={false}>
+        <Card title="Count of Orders By Month" bordered={true}>
           <OrdersByMonth />
         </Card>
       </Col>
       <Col span={8}>
-        <Card title="Top 5 Customers By Orders" bordered={false}>
+        <Card title="Top 5 Customers By Orders" bordered={true}>
           <CustomersByOrders />
         </Card>
       </Col>
